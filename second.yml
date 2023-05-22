@@ -1,0 +1,21 @@
+server :
+   port : 8082
+
+spring:     
+    datasource : 
+        password : 1995
+        url: jdbc:mysql://localhost:3307/studentmanagement
+        username : root
+    boot :
+      admin:
+        client:
+           url: http://localhost:9000 
+    application :
+       name: GREET-API-2          
+     
+      
+management:
+   endpoints:
+       web:
+        exposure:
+          include : '*'
