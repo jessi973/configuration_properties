@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    gateway:
+     discovery.locator:
+        enabled: true
+        lowerCaseServiceId: true
+     routes:
+        - id: welcome-01
+          uri: lb://WlCOME-API-1
+          predicates:
+            - Path=/get
+        - id: greet-02
+          uri: lb://GREET-API-2  
+          predicates:
+            - Path=/getting
+  application:
+     name: GATEWAY-SERVICE           
+server :
+   port : 2020
